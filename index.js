@@ -25,7 +25,7 @@ app.set('port', process.env.PORT || 3000);//escucha en el puerto 3000 si no hay 
 // Sincronizar Base de Datos y arrancar el servidor
 // .sync() crea las tablas automáticamente en Postgres si aún no existen
 // force en false crea las tablas solo si no existe, no borra datos en cada inicio
-sequelize.sync({ force: true })//sincroniza la base de datos con las tablas definidas en los modelos
+sequelize.sync({ force: false })//sincroniza la base de datos con las tablas definidas en los modelos
 .then(() => {
     console.log('Tablas de PostgreSQL sincronizadas');
     app.listen(app.get('port'), () => {
